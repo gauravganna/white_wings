@@ -1,16 +1,18 @@
 import React from 'react';
 import TiltedCarousel from './TiltedCarousel';
+import StatisticsCards from './StatisticsCards';
+import HappyFamiliesCard from './HappyFamiliesCard';
 
 const HeroContent = () => {
   return (
-    <div className="absolute inset-0 z-10 flex items-center justify-center">
+    <div className="absolute inset-0 z-10 flex items-start justify-start">
       {/* Hero Container with Glassmorphism */}
       <div className="
         h-full
         w-full 
         lg:h-auto
         mt-0 mx-0
-        lg:mt-20 lg:mx-[60px]
+        lg:mt-15 lg:mx-[60px]
         backdrop-blur-[7.8px] 
         bg-white/60 
         border border-white/10 
@@ -20,8 +22,11 @@ const HeroContent = () => {
         p-6
         lg:p-12
       ">
-        {/* Hero Content - Phase 3 */}
+        {/* Hero Content - Phase 5 */}
         <div className="flex flex-col justify-center h-full lg:h-auto lg:max-w-[50%]">
+          {/* Statistics Cards - Phase 5 (Desktop Only) */}
+          <StatisticsCards />
+          
           {/* Hero Title */}
           <h1 className="
             text-3xl lg:text-[42px] 
@@ -83,6 +88,9 @@ const HeroContent = () => {
               Sign in
             </button>
           </div>
+          
+          {/* Happy Families Card - Phase 5 (Desktop Only) */}
+          <HappyFamiliesCard />
         </div>
         <TiltedCarousel />
       </div>

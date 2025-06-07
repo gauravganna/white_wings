@@ -36,10 +36,6 @@ const TiltedCarousel = () => {
         </div>
       </div>
       
-      {/* Development indicator */}
-      <div className="absolute top-4 right-4 bg-green-500 text-white px-2 py-1 text-xs rounded z-30">
-        Phase 4: Step 2 - Tilted Carousel (315°)
-      </div>
     </div>
   );
 };
