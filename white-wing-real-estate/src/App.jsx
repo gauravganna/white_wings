@@ -1,29 +1,31 @@
 import { BRAND_COLORS } from './constants/site-data'
 import Header from './components/Header/Header'
+import Hero from './components/Hero/Hero'
 import Footer from './components/Footer/Footer'
 
 function App() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="flex flex-col min-h-screen">
       {/* Header Component */}
       <Header />
       
-      {/* Temporary content to show the header in context */}
-      <main className="p-8">
+      {/* Hero Section - Phase 1: Video Background */}
+      <Hero />
+      
+      {/* Temporary content for testing - Will be replaced with other sections */}
+      <main className="flex-1 p-8 bg-white">
         <div className="max-w-4xl mx-auto">
-          <h1 className="text-3xl font-bold text-gray-900 mb-6">
-            White Wing Group - Real Estate Website
-          </h1>
-          
           <div className="bg-gray-50 p-6 rounded-lg">
-            <h2 className="text-xl font-semibold mb-4">Header Component Status</h2>
+            <h2 className="text-xl font-semibold mb-4">Hero Section Status - Phase 4</h2>
             <p className="text-gray-700 mb-4">
-              ✅ Navigation bar implemented with responsive design<br/>
-              ✅ Desktop horizontal navigation with active states<br/>
-              ✅ Mobile hamburger menu with slide-out panel<br/>
-              ✅ User icon and brand colors from Figma<br/>
-              ✅ Properties and Media have dropdown icons<br/>
-              ✅ Matches Figma design specifications
+              ✅ Video background with mobile fallback<br/>
+              ✅ Glassmorphism hero container (full height mobile)<br/>
+              ✅ Hero content with exact Figma typography<br/>
+              ✅ Dual CTA buttons with hover effects<br/>
+              ✅ Infinite horizontal carousel animation<br/>
+              ✅ 315-degree tilted carousel positioning<br/>
+              ✅ Right-half container layout<br/>
+              🔄 Phase 5: Statistics cards (Commercial, Residential, Land Development)
             </p>
             
             <div className="mt-6">
