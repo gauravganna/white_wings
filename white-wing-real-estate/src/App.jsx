@@ -23,9 +23,9 @@ function App() {
               ✅ Hero content with exact Figma typography<br/>
               ✅ Dual CTA buttons with hover effects<br/>
               ✅ Statistics cards (Commercial, Residential, Land Development)<br/>
-              ✅ Happy Families card with triangle design<br/>
-              ✅ Infinite tilted carousel animation (315°)<br/>
-              ✅ Desktop-only elements hidden on mobile<br/>
+              ✅ Happy Families card with arrow design<br/>
+              ✅ Responsive carousel: tilted (desktop) + blurred background (mobile)<br/>
+              ✅ Perfect mobile experience with background carousel<br/>
               ✅ Fully responsive and performant
             </p>
             
