@@ -64,12 +64,6 @@ const TiltedCarousel = () => {
           </div>
         </div>
       </div>
-      
-      {/* Development indicator */}
-      <div className="absolute top-4 right-4 bg-green-500 text-white px-2 py-1 text-xs rounded z-30">
-        <span className="lg:hidden">Mobile: Background Carousel</span>
-        <span className="hidden lg:block">Desktop: Tilted Carousel (315°)</span>
-      </div>
     </div>
   );
 };

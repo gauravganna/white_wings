@@ -1,6 +1,7 @@
 import { BRAND_COLORS } from './constants/site-data'
 import Header from './components/Header/Header'
 import Hero from './components/Hero/Hero'
+import Clients from './components/Clients/Clients'
 import Footer from './components/Footer/Footer'
 
 function App() {
@@ -12,12 +13,16 @@ function App() {
       {/* Hero Section - Phase 1: Video Background */}
       <Hero />
       
+      {/* Clients Section - Phase 2: Horizontal Moving Carousel */}
+      <Clients />
+      
       {/* Temporary content for testing - Will be replaced with other sections */}
       <main className="flex-1 p-8 bg-white">
         <div className="max-w-4xl mx-auto">
           <div className="bg-gray-50 p-6 rounded-lg">
-            <h2 className="text-xl font-semibold mb-4">Hero Section Status - COMPLETE! 🎉</h2>
+            <h2 className="text-xl font-semibold mb-4">Website Progress Status 🚀</h2>
             <p className="text-gray-700 mb-4">
+              <strong>✅ Hero Section - COMPLETE!</strong><br/>
               ✅ Video background with mobile fallback<br/>
               ✅ Glassmorphism hero container (full height mobile)<br/>
               ✅ Hero content with exact Figma typography<br/>
@@ -26,7 +31,16 @@ function App() {
               ✅ Happy Families card with arrow design<br/>
               ✅ Responsive carousel: tilted (desktop) + blurred background (mobile)<br/>
               ✅ Perfect mobile experience with background carousel<br/>
-              ✅ Fully responsive and performant
+              ✅ Fully responsive and performant<br/><br/>
+              
+              <strong>✅ Clients Section - COMPLETE!</strong><br/>
+              ✅ Horizontal moving carousel with smooth animation<br/>
+              ✅ Desktop: Title "Clients" with carousel below<br/>
+              ✅ Mobile: Carousel only (no title)<br/>
+              ✅ Pause animation on hover<br/>
+              ✅ Seamless infinite scroll<br/>
+              ✅ Responsive image sizing (176×138px desktop, 75×59px mobile)<br/>
+              ✅ Exact Figma colors and spacing
             </p>
             
             <div className="mt-6">

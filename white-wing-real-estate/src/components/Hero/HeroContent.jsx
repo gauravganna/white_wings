@@ -15,7 +15,6 @@ const HeroContent = () => {
         lg:mt-15 lg:mx-[60px]
         backdrop-blur-[7.8px] 
         bg-white/60 
-        border border-white/10 
         rounded-none
         lg:rounded-lg 
         shadow-[0px_32px_64px_-12px_rgba(0,0,0,0.14)]
