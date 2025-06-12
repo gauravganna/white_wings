@@ -6,7 +6,6 @@ const Projects = () => {
   // State for filter management - independent for each category
   const [commercialFilter, setCommercialFilter] = useState('All')
   const [residentialFilter, setResidentialFilter] = useState('All')
-  const [projects, setProjects] = useState(PROJECTS_DATA)
 
   // Get filtered projects for each category
   const filteredCommercialProjects = getFilteredProjects('commercial', commercialFilter)
@@ -27,25 +26,7 @@ const Projects = () => {
     // TODO: Navigate to project details page
   }
 
-  // Handle favorite toggle
-  const handleFavoriteToggle = (projectId) => {
-    setProjects(prevProjects => {
-      const newProjects = { ...prevProjects }
-      
-      // Find and update the project in the appropriate category
-      Object.keys(newProjects).forEach(category => {
-        const projectIndex = newProjects[category].findIndex(p => p.id === projectId)
-        if (projectIndex !== -1) {
-          newProjects[category][projectIndex] = {
-            ...newProjects[category][projectIndex],
-            isFavorite: !newProjects[category][projectIndex].isFavorite
-          }
-        }
-      })
-      
-      return newProjects
-    })
-  }
+
 
   // Handle "More" click
   const handleMoreClick = (category) => {
@@ -63,7 +44,7 @@ const Projects = () => {
       </div>
 
       {/* Projects Container */}
-      <div className="flex flex-col justify-center gap-8 md:gap-11 max-w-[1440px] mx-auto">
+      <div className="flex flex-col justify-center gap-2 md:gap-2 max-w-[1440px] mx-auto">
         {/* Commercial Projects Container */}
         <div className="bg-[#DFE2E6] rounded-lg shadow-[0px_1px_2px_0px_rgba(0,0,0,0.06),0px_1px_3px_0px_rgba(0,0,0,0.1)] px-2 md:px-6 py-6 md:py-11 flex flex-col items-center gap-3.5">
           {/* Commercial Header */}
@@ -104,9 +85,8 @@ const Projects = () => {
               {filteredCommercialProjects.map((project) => (
                 <div key={project.id} className="flex-shrink-0">
                   <ProjectCard
-                    project={projects.commercial.find(p => p.id === project.id)}
+                    project={PROJECTS_DATA.commercial.find(p => p.id === project.id)}
                     onCardClick={handleProjectClick}
-                    onFavoriteToggle={handleFavoriteToggle}
                   />
                 </div>
               ))}
@@ -116,9 +96,8 @@ const Projects = () => {
               {filteredCommercialProjects.map((project) => (
                 <ProjectCard
                   key={project.id}
-                  project={projects.commercial.find(p => p.id === project.id)}
+                  project={PROJECTS_DATA.commercial.find(p => p.id === project.id)}
                   onCardClick={handleProjectClick}
-                  onFavoriteToggle={handleFavoriteToggle}
                 />
               ))}
             </div>
@@ -165,9 +144,8 @@ const Projects = () => {
               {filteredResidentialProjects.map((project) => (
                 <div key={project.id} className="flex-shrink-0">
                   <ProjectCard
-                    project={projects.residential.find(p => p.id === project.id)}
+                    project={PROJECTS_DATA.residential.find(p => p.id === project.id)}
                     onCardClick={handleProjectClick}
-                    onFavoriteToggle={handleFavoriteToggle}
                   />
                 </div>
               ))}
@@ -177,9 +155,8 @@ const Projects = () => {
               {filteredResidentialProjects.map((project) => (
                 <ProjectCard
                   key={project.id}
-                  project={projects.residential.find(p => p.id === project.id)}
+                  project={PROJECTS_DATA.residential.find(p => p.id === project.id)}
                   onCardClick={handleProjectClick}
-                  onFavoriteToggle={handleFavoriteToggle}
                 />
               ))}
             </div>

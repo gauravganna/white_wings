@@ -1,22 +1,13 @@
 import { useState } from 'react'
 
-const ProjectCard = ({ project, onCardClick, onFavoriteToggle }) => {
+const ProjectCard = ({ project, onCardClick }) => {
   const [imageLoaded, setImageLoaded] = useState(false)
 
   const handleCardClick = () => {
     onCardClick(project)
   }
 
-  const handleFavoriteClick = (e) => {
-    e.stopPropagation()
-    onFavoriteToggle(project.id)
-  }
 
-  const handleLocationClick = (e) => {
-    e.stopPropagation()
-    // Handle location/navigation click
-    console.log('Navigate to project details:', project.id)
-  }
 
   return (
     <div 
@@ -60,54 +51,56 @@ const ProjectCard = ({ project, onCardClick, onFavoriteToggle }) => {
       {/* Action Icons */}
       <div className="absolute bottom-[15px] left-[30.5px] right-[30.5px] flex items-center justify-between z-10">
         {/* Heart Icon */}
-        <button
-          onClick={handleFavoriteClick}
-          className="w-8 h-8 flex items-center justify-center group/heart bg-black/20 rounded-full backdrop-blur-sm hover:bg-black/30 transition-all duration-200"
-        >
+        <div className="w-10 h-10 flex items-center justify-center">
           <svg
-            width="24"
-            height="22"
-            viewBox="0 0 21 19"
+            width="28"
+            height="28"
+            viewBox="0 0 24 24"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
             className="transition-colors duration-200"
           >
             <path
-              d="M18.7371 2.26249C18.3447 1.86142 17.8785 1.54375 17.3659 1.33013C16.8534 1.11651 16.3039 1.01135 15.7496 1.01135C15.1952 1.01135 14.6458 1.11651 14.1332 1.33013C13.6206 1.54375 13.1544 1.86142 12.762 2.26249L11.9996 3.04374L11.2371 2.26249C10.4436 1.44374 9.36215 1.01178 8.24959 1.01178C7.13703 1.01178 6.05553 1.44374 5.26209 2.26249C4.46865 3.08124 4.04834 4.19499 4.04834 5.34374C4.04834 6.49249 4.46865 7.60624 5.26209 8.42499L5.99959 9.18749L11.9996 15.3437L18.0371 9.18749L18.7371 8.42499C19.1259 8.02124 19.4345 7.54374 19.6434 7.01874C19.8522 6.49374 19.9559 5.93124 19.9559 5.36249C19.9559 4.79374 19.8522 4.23124 19.6434 3.70624C19.4345 3.18124 19.1259 2.70374 18.7371 2.26249Z"
+              d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
               stroke="#FFFFFF"
-              strokeWidth="3"
-              fill={project.isFavorite ? "#FFFFFF" : "none"}
+              strokeWidth="1.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              fill="none"
             />
           </svg>
-        </button>
+        </div>
 
         {/* Navigation Icon */}
-        <button
-          onClick={handleLocationClick}
-          className="w-8 h-8 flex items-center justify-center group/nav bg-black/20 rounded-full backdrop-blur-sm hover:bg-black/30 transition-all duration-200"
-        >
+        <div className="w-10 h-10 flex items-center justify-center">
           <svg
-            width="22"
-            height="22"
-            viewBox="0 0 19 19"
+            width="28"
+            height="28"
+            viewBox="0 0 24 24"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
             className="transition-colors duration-200"
           >
             <path
-              d="M16.5833 8.10416C16.5833 13.4583 9.5 17.8333 9.5 17.8333C9.5 17.8333 2.41667 13.4583 2.41667 8.10416C2.41667 6.23053 3.16101 4.43374 4.48915 3.1056C5.81729 1.77746 7.61408 1.03333 9.48771 1.03333C11.3613 1.03333 13.1581 1.77746 14.4863 3.1056C15.8144 4.43374 16.5587 6.23053 16.5587 8.10416H16.5833Z"
+              d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"
               stroke="#FFFFFF"
-              strokeWidth="3"
+              strokeWidth="1.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
               fill="none"
             />
-            <path
-              d="M9.5 10.2917C10.7047 10.2917 11.6875 9.30888 11.6875 8.10417C11.6875 6.89946 10.7047 5.91667 9.5 5.91667C8.29529 5.91667 7.3125 6.89946 7.3125 8.10417C7.3125 9.30888 8.29529 10.2917 9.5 10.2917Z"
+            <circle
+              cx="12"
+              cy="10"
+              r="3"
               stroke="#FFFFFF"
-              strokeWidth="3"
+              strokeWidth="1.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
               fill="none"
             />
           </svg>
-        </button>
+        </div>
       </div>
     </div>
   )
