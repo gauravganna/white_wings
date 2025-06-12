@@ -1,0 +1,10 @@
+# Videos Thumbnails Directory
+
+This directory contains video thumbnail images for the social media videos section.
+
+To add video thumbnails:
+1. Add thumbnail images here (recommended: 642x440px or similar aspect ratio)
+2. Update the videoThumbnails object in /src/constants/videos-data.js
+3. Use relative paths like: '/src/assets/images/videos/your-thumbnail.jpg'
+
+Supported formats: .jpg, .jpeg, .png, .webp 
