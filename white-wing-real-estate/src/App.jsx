@@ -2,6 +2,7 @@ import { BRAND_COLORS } from './constants/site-data'
 import Header from './components/Header/Header'
 import Hero from './components/Hero/Hero'
 import Clients from './components/Clients/Clients'
+import Projects from './components/Projects/Projects'
 import Footer from './components/Footer/Footer'
 
 function App() {
@@ -15,6 +16,9 @@ function App() {
       
       {/* Clients Section - Phase 2: Horizontal Moving Carousel */}
       <Clients />
+      
+      {/* Projects Section - Phase 3: Real Estate Projects Showcase */}
+      <Projects />
       
       {/* Temporary content for testing - Will be replaced with other sections */}
       <main className="flex-1 p-8 bg-white">
