@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { NAVIGATION_ITEMS } from '../../constants/site-data';
 import logo from '../../assets/icons/logo.jpg';
 
 const Header = () => {
@@ -9,7 +8,7 @@ const Header = () => {
   // Navigation items with dropdown status
   const navigationItems = [
     { name: 'Home', hasDropdown: false },
-    { name: 'About Us', hasDropdown: false },
+    { name: 'About US', hasDropdown: false },
     { name: 'Properties', hasDropdown: true },
     { name: 'Media', hasDropdown: true },
     { name: 'Contact US', hasDropdown: false },
@@ -38,7 +37,7 @@ const Header = () => {
               <img 
                 src={logo} 
                 alt="White Wing Group" 
-                className="w-12 h-8 md:w-[72px] md:h-8 object-contain"
+                className="w-12 h-8 md:w-[72px] md:h-12 object-contain"
               />
             </div>
 
@@ -114,7 +113,7 @@ const Header = () => {
               </button>
 
               {/* User Icon */}
-              <button className="flex items-center justify-center w-9 h-9 bg-[#3493F2] rounded-full text-white hover:bg-[#2563eb] transition-colors duration-200">
+              {/* <button className="flex items-center justify-center w-9 h-9 bg-[#3493F2] rounded-full text-white hover:bg-[#2563eb] transition-colors duration-200">
                 <svg
                   className="w-5 h-5"
                   fill="none"
@@ -128,7 +127,7 @@ const Header = () => {
                     d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
                   />
                 </svg>
-              </button>
+              </button> */}
             </div>
           </div>
         </div>

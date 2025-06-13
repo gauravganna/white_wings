@@ -5,14 +5,14 @@ import HappyFamiliesCard from './HappyFamiliesCard';
 
 const HeroContent = () => {
   return (
-    <div className="absolute inset-0 z-10 flex items-start justify-start">
+    <div className="relative z-10 md:min-h-screen flex items-start justify-start">
       {/* Hero Container with Glassmorphism */}
       <div className="
         h-full
         w-full 
         lg:h-auto
         mt-0 mx-0
-        lg:mt-15 lg:mx-[60px]
+        lg:mt-15 lg:mx-[60px] lg:mb-30
         backdrop-blur-[7.8px] 
         bg-white/60 
         rounded-none

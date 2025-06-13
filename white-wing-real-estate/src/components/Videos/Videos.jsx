@@ -25,7 +25,7 @@ const Videos = () => {
   }
 
   return (
-    <section className="w-full bg-white py-8 md:py-16 px-4 md:px-16">
+    <section className="w-full bg-white py-8 md:py-0  px-4 md:px-16">
       {/* Section Container */}
       <div className="max-w-[1440px] mx-auto">
         {/* Section Content */}

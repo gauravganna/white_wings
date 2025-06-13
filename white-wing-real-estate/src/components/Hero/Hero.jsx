@@ -4,7 +4,7 @@ import HeroContent from './HeroContent';
 
 const Hero = () => {
   return (
-    <section className="relative h-[90vh] overflow-hidden">
+    <section className="relative md:min-h-screen h-full overflow-hidden">
       {/* Video Background */}
       <VideoBackground />
       
