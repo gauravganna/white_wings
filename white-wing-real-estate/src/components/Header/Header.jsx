@@ -27,27 +27,27 @@ const Header = () => {
   return (
     <>
       {/* Header */}
-      <header className="bg-[#F5F6F7] shadow-sm border-b border-gray-200">
+      <header className="bg-[#F5F6F7] shadow-[0px_1px_2px_0px_rgba(0,0,0,0.05)]  border-gray-200">
         <div className="w-full">
           {/* Desktop & Mobile Container */}
-          <div className="flex items-center justify-between px-6 py-4 md:px-16">
+          <div className="flex items-center justify-between px-6 py-4 md:px-16 md:py-4 relative h-[90px]">
             
-            {/* Logo */}
-            <div className="flex items-center">
+            {/* Logo - Fixed position top-left for both Mobile and Desktop */}
+            <div className="flex items-center absolute top-0 left-0 p-0 m-0">
               <img 
                 src={logo} 
                 alt="White Wing Group" 
-                className="w-12 h-8 md:w-[72px] md:h-12 object-contain"
+                className="w-[112.39px] h-[90px] object-contain"
               />
             </div>
 
             {/* Desktop Navigation */}
-            <nav className="hidden md:flex items-center space-x-8">
+            <nav className="hidden md:flex items-center space-x-8 justify-center flex-1 ml-[112.39px]">
               {navigationItems.map((item) => (
                 <button
                   key={item.name}
                   onClick={() => handleNavClick(item.name)}
-                  className={`flex items-center space-x-1 px-4 py-3 text-base font-medium transition-colors duration-200 relative group ${
+                  className={`flex items-center space-x-1 px-3 py-2 text-base font-medium transition-colors duration-200 relative group h-[58px] ${
                     activeItem === item.name
                       ? 'text-[#091E42] font-semibold'
                       : 'text-[#091E42] hover:text-[#3493F2]'
@@ -74,14 +74,14 @@ const Header = () => {
                   
                   {/* Active State Underline */}
                   {activeItem === item.name && (
-                    <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-[#7DAADB]"></div>
+                    <div className="absolute bottom-0 left-0 right-0 h-[3px] bg-[#7DAADB]"></div>
                   )}
                 </button>
               ))}
             </nav>
 
             {/* Right Side Icons */}
-            <div className="flex items-center space-x-4">
+            <div className="flex items-center space-x-4 ml-auto">
               
               {/* Mobile Menu Button */}
               <button

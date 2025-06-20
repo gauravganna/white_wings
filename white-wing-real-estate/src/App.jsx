@@ -4,6 +4,7 @@ import Hero from './components/Hero/Hero'
 import Clients from './components/Clients/Clients'
 import Projects from './components/Projects/Projects'
 import Videos from './components/Videos/Videos'
+import Testimonials from './components/Testimonials/Testimonials'
 import Contact from './components/Contact/Contact'
 import Footer from './components/Footer/Footer'
 
@@ -24,6 +25,9 @@ function App() {
       
       {/* Videos Section - Phase 4: Social Media Videos */}
       <Videos />
+      
+      {/* Testimonials Section - Phase 6: Client Testimonials */}
+      <Testimonials />
       
       {/* Contact Section - Phase 5: Contact Form with Video Background */}
       <Contact />

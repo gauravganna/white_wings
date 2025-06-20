@@ -37,8 +37,8 @@ const Projects = () => {
   return (
     <section className="w-full bg-white py-0 md:py-14 px-0 md:px-16">
       {/* Section Header */}
-      <div className="flex flex-row items-center gap-1 md:mb-11">
-        <h2 className="hidden md:block text-[#091E42] opacity-50 text-[18px] md:text-[20.35px] font-normal leading-[1.27] tracking-[-0.026em]">
+      <div className="flex flex-row items-center gap-1 mb-2 mt-6 md:mb-11">
+        <h2 className="text-[#091E42] opacity-50 text-[18px] md:text-[20.35px] font-normal leading-[1.27] tracking-[-0.026em] px-4 md:px-0">
           Projects
         </h2>
       </div>
@@ -50,7 +50,7 @@ const Projects = () => {
           {/* Commercial Header */}
           <div className="w-full flex items-center justify-between px-1 md:px-2.5">
             <div className="flex items-center gap-6">
-              <h3 className="text-[#091E42] text-[25.89px] font-normal leading-[1.27] tracking-[-0.027em]">
+              <h3 className="text-[#091E42] text-[18px] md:text-[25.89px] font-normal leading-[1.27] tracking-[-0.027em]">
                 Commercial
               </h3>
               {/* Commercial Filter Tabs - Hidden on mobile */}
@@ -72,7 +72,7 @@ const Projects = () => {
             </div>
             <button
               onClick={() => handleMoreClick('commercial')}
-              className="hidden md:block text-[#839AA0] text-[13.44px] font-medium leading-[1.27] tracking-[-0.0045em] hover:text-[#6B7580] transition-colors duration-200"
+              className="text-[#839AA0] text-[13.44px] font-medium leading-[1.27] tracking-[-0.0045em] hover:text-[#6B7580] transition-colors duration-200"
             >
               More
             </button>
@@ -109,7 +109,7 @@ const Projects = () => {
           {/* Residential Header */}
           <div className="w-full flex items-center justify-between px-1 md:px-2.5">
             <div className="flex items-center gap-6">
-              <h3 className="text-[#091E42] text-[25.89px] font-normal leading-[1.27] tracking-[-0.027em]">
+              <h3 className="text-[#091E42] text-[18px] md:text-[25.89px] font-normal leading-[1.27] tracking-[-0.027em]">
                 Residential
               </h3>
               {/* Residential Filter Tabs - Hidden on mobile */}
@@ -131,7 +131,7 @@ const Projects = () => {
             </div>
             <button
               onClick={() => handleMoreClick('residential')}
-              className="hidden md:block text-[#839AA0] text-[13.44px] font-medium leading-[1.27] tracking-[-0.0045em] hover:text-[#6B7580] transition-colors duration-200"
+              className="text-[#839AA0] text-[13.44px] font-medium leading-[1.27] tracking-[-0.0045em] hover:text-[#6B7580] transition-colors duration-200"
             >
               More
             </button>
