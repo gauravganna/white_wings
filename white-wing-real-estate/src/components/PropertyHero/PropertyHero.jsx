@@ -18,7 +18,7 @@ function PropertyHero({ property }) {
   }
 
   return (
-    <div className="relative w-full min-h-[calc(100vh-90px)] h-auto mt-6 md:mt-0 md:h-[calc(100vh-90px)] md:overflow-hidden">
+    <div className="relative w-full h-auto mt-6 md:mt-0 md:h-[calc(100vh-90px)] md:overflow-hidden">
       {/* Desktop/Tablet Background - Blur Effect */}
       <div className="hidden md:block">
         {/* Background Image - Dynamic, matches current image */}
@@ -43,7 +43,7 @@ function PropertyHero({ property }) {
       </div>
 
       {/* Content Area - Responsive Layout */}
-      <div className="relative z-10 min-h-full h-auto md:h-full flex flex-col md:flex-row items-end justify-between px-4 lg:px-10 pb-10">
+      <div className="relative z-10 min-h-full h-auto md:h-full flex flex-col md:flex-row items-end justify-between px-4 lg:px-10 md:pb-10">
         
         {/* Mobile Layout - Stacked */}
         <div className="block md:hidden w-full space-y-6">

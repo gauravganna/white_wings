@@ -18,8 +18,6 @@ export const PROJECTS_DATA = {
       image: valentinoImg,
       category: 'commercial',
       status: ['All', 'New'],
-      isFavorite: false,
-      location: 'Downtown Business District'
     },
     {
       id: 'majoris',
@@ -27,8 +25,6 @@ export const PROJECTS_DATA = {
       image: majorisImg,
       category: 'commercial',
       status: ['All', 'Exclusive'],
-      isFavorite: false,
-      location: 'Commercial Hub'
     },
     {
       id: 'massimo',
@@ -36,8 +32,6 @@ export const PROJECTS_DATA = {
       image: massimoImg,
       category: 'commercial',
       status: ['All', 'Upcoming'],
-      isFavorite: false,
-      location: 'Business Park'
     }
   ],
   residential: [
@@ -47,8 +41,6 @@ export const PROJECTS_DATA = {
       image: bellaCasaImg,
       category: 'residential',
       status: ['All', 'New'],
-      isFavorite: false,
-      location: 'Luxury Residences'
     },
     {
       id: 'flamingo',
@@ -56,8 +48,6 @@ export const PROJECTS_DATA = {
       image: flamingoImg,
       category: 'residential',
       status: ['All', 'Exclusive'],
-      isFavorite: false,
-      location: 'Waterfront Living'
     },
     {
       id: 'torrance',
@@ -65,8 +55,6 @@ export const PROJECTS_DATA = {
       image: torranceImg,
       category: 'residential',
       status: ['All', 'Upcoming'],
-      isFavorite: false,
-      location: 'Premium Apartments'
     }
   ]
 }

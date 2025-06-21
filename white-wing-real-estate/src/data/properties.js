@@ -11,6 +11,11 @@ import { getPropertyImages } from '../utils/imageLoader'
 // 5. Images are automatically loaded from the property folder - no need to list them!
 // 6. The 'slug' is used in the URL (e.g., /property/bella-casa)
 // 7. Keep 'featuredImageIndex' as 0 unless you want a different main image
+// 8. PropertyInfo content:
+//    - facilities: List of property features (4 items recommended)
+//    - video: Single video object with title and url to video file
+//    - plans: List of floor plan types (3 items recommended)
+//    - brochure: Single brochure object with title and url to PDF file
 // =============================================================================
 
 export const PROPERTIES = [
@@ -26,6 +31,29 @@ A comfortable and peaceful place to call home.`,
     status: 'Completed',
     phone: '91 98240-99444',
     location: 'Bellacassa, Althan Bhimrad Bhimrad, Bhimrad-Althan Rd, Bharthana, Surat, Gujarat 395017',
+    
+    // Property Information Content
+    propertyInfo: {
+      facilities: [
+        'Perfect for Families',
+        'Gym Facilities',
+        'Garden and open spaces',
+        '3-4 Bedrooms'
+      ],
+      video: {
+        title: 'Property Virtual Tour',
+        url: '/src/assets/videos/bella-casa-tour.mp4' // Path to video file
+      },
+      plans: [
+        '2 BHK Layout',
+        '3 BHK Layout', 
+        '4 BHK Penthouse'
+      ],
+      brochure: {
+        title: 'Download Property Brochure',
+        url: '/src/assets/brochures/bella-casa-brochure.pdf' // Path to PDF file
+      }
+    },
     
     // Images are automatically loaded from folder
     get images() {
@@ -47,6 +75,29 @@ Where elegance meets comfort in every detail.`,
     phone: '91 98240-99444',
     location: 'Valentino Heights, Ring Road, Surat, Gujarat 395002',
     
+    // Property Information Content
+    propertyInfo: {
+      facilities: [
+        'Luxury Living Spaces',
+        'Swimming Pool & Spa',
+        'Premium Clubhouse',
+        '2-3 Bedrooms'
+      ],
+      video: {
+        title: 'Valentino Project Walkthrough',
+        url: '/src/assets/videos/valentino-walkthrough.mp4' // Path to video file
+      },
+      plans: [
+        '2 BHK Premium',
+        '3 BHK Deluxe',
+        'Penthouse Collection'
+      ],
+      brochure: {
+        title: 'Download Valentino Brochure',
+        url: '/src/assets/brochures/valentino-brochure.pdf' // Path to PDF file
+      }
+    },
+    
     // Images are automatically loaded from folder
     get images() {
       return getPropertyImages(this.slug)
@@ -66,6 +117,29 @@ Designed for modern families seeking quality living.`,
     status: 'Completed',
     phone: '91 98240-99444',
     location: 'Majoris Complex, Vesu, Surat, Gujarat 395007',
+    
+    // Property Information Content
+    propertyInfo: {
+      facilities: [
+        'Family-Friendly Design',
+        'Children Play Area',
+        'Landscaped Gardens',
+        '3-4 Bedrooms'
+      ],
+      video: {
+        title: 'Majoris Property Tour',
+        url: '/src/assets/videos/majoris-property-tour.mp4' // Path to video file
+      },
+      plans: [
+        '3 BHK Family',
+        '4 BHK Spacious',
+        'Duplex Options'
+      ],
+      brochure: {
+        title: 'Download Majoris Brochure',
+        url: '/src/assets/brochures/majoris-brochure.pdf' // Path to PDF file
+      }
+    },
     
     // Images are automatically loaded from folder
     get images() {
@@ -87,6 +161,29 @@ Premium apartments with world-class amenities.`,
     phone: '91 98240-99444',
     location: 'Massimo Towers, Althan, Surat, Gujarat 395017',
     
+    // Property Information Content
+    propertyInfo: {
+      facilities: [
+        'World-Class Amenities',
+        'Rooftop Infinity Pool',
+        'Private Elevators',
+        '3-5 Bedrooms'
+      ],
+      video: {
+        title: 'Massimo Luxury Showcase',
+        url: '/src/assets/videos/massimo-luxury-showcase.mp4' // Path to video file
+      },
+      plans: [
+        '3 BHK Premium',
+        '4 BHK Luxury',
+        '5 BHK Penthouse'
+      ],
+      brochure: {
+        title: 'Download Massimo Brochure',
+        url: '/src/assets/brochures/massimo-brochure.pdf' // Path to PDF file
+      }
+    },
+    
     // Images are automatically loaded from folder
     get images() {
       return getPropertyImages(this.slug)
@@ -106,6 +203,29 @@ Modern architecture with premium finishes.`,
     status: 'Completed',
     phone: '91 98240-99444',
     location: 'Torrance Heights, Piplod, Surat, Gujarat 395007',
+    
+    // Property Information Content
+    propertyInfo: {
+      facilities: [
+        'Modern Architecture',
+        'Premium Finishes',
+        'Elevated Views',
+        '2-4 Bedrooms'
+      ],
+      video: {
+        title: 'Torrance Architectural Tour',
+        url: '/src/assets/videos/torrance-architectural-tour.mp4' // Path to video file
+      },
+      plans: [
+        '2 BHK Modern',
+        '3 BHK Premium',
+        '4 BHK Penthouse'
+      ],
+      brochure: {
+        title: 'Download Torrance Brochure',
+        url: '/src/assets/brochures/torrance-brochure.pdf' // Path to PDF file
+      }
+    },
     
     // Images are automatically loaded from folder
     get images() {

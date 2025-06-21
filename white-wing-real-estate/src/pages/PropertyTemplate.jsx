@@ -2,6 +2,7 @@ import { useParams } from 'react-router-dom'
 import Header from '../components/Header/Header'
 import Footer from '../components/Footer/Footer'
 import PropertyHero from '../components/PropertyHero/PropertyHero'
+import PropertyInfo from '../components/PropertyInfo/PropertyInfo'
 import { getPropertyBySlug } from '../data/properties'
 
 function PropertyTemplate() {
@@ -38,6 +39,9 @@ function PropertyTemplate() {
       
       {/* Property Hero Section */}
       <PropertyHero property={property} />
+      
+      {/* Property Information Section */}
+      <PropertyInfo property={property} />
       
       {/* Main Property Content Area - To be filled later */}
       <main className="flex-grow">
