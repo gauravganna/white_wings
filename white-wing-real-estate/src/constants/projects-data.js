@@ -1,3 +1,15 @@
+// =============================================================================
+// ⚠️  DEPRECATED: This file is deprecated and will be removed in the future
+// =============================================================================
+// 
+// Projects data has been consolidated into /src/data/properties.js
+// This file is kept temporarily for backward compatibility.
+// 
+// Please use the unified properties.js file instead:
+// import { PROJECTS_DATA, FILTER_OPTIONS, getFilteredProjects } from '../data/properties'
+// 
+// =============================================================================
+
 // Project images imports
 import valentinoImg from '../assets/images/projects/valentino.png'
 import majorisImg from '../assets/images/projects/majoris.jpg'

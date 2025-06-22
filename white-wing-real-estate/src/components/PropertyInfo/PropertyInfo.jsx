@@ -60,7 +60,7 @@ function PropertyInfo({ property }) {
   }
 
   return (
-    <div className="w-full bg-white py-2 px-2 md:px-16 md:py-20">
+    <div className="w-full bg-white py-2 px-2 md:px-16 md:pt-20">
       <div className="w-full mx-auto">
         
         {/* Desktop Layout */}

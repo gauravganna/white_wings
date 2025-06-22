@@ -1,7 +1,7 @@
 import { getPropertyImages } from '../utils/imageLoader'
 
 // =============================================================================
-// PROPERTIES DATABASE
+// UNIFIED PROPERTIES DATABASE (Projects + Properties)
 // =============================================================================
 // Instructions for Non-Technical Users:
 // 1. To add a new property: Copy an existing property object and modify the details
@@ -16,6 +16,11 @@ import { getPropertyImages } from '../utils/imageLoader'
 //    - video: Single video object with title and url to video file
 //    - plans: List of floor plan types (3 items recommended)
 //    - brochure: Single brochure object with title and url to PDF file
+// 9. Project Classification (for homepage Projects section):
+//    - category: 'commercial' or 'residential'
+//    - projectStatus: Array like ['All', 'New'] or ['All', 'Exclusive', 'Upcoming']
+// 
+// NOTE: This single file now powers both the Projects section and Property pages!
 // =============================================================================
 
 export const PROPERTIES = [
@@ -31,6 +36,10 @@ A comfortable and peaceful place to call home.`,
     status: 'Completed',
     phone: '91 98240-99444',
     location: 'Bellacassa, Althan Bhimrad Bhimrad, Bhimrad-Althan Rd, Bharthana, Surat, Gujarat 395017',
+    
+    // Project Classification (for Projects component)
+    category: 'residential',
+    projectStatus: ['All', 'New'],
     
     // Property Information Content
     propertyInfo: {
@@ -75,6 +84,10 @@ Where elegance meets comfort in every detail.`,
     phone: '91 98240-99444',
     location: 'Valentino Heights, Ring Road, Surat, Gujarat 395002',
     
+    // Project Classification (for Projects component)
+    category: 'commercial',
+    projectStatus: ['All', 'New'],
+    
     // Property Information Content
     propertyInfo: {
       facilities: [
@@ -117,6 +130,10 @@ Designed for modern families seeking quality living.`,
     status: 'Completed',
     phone: '91 98240-99444',
     location: 'Majoris Complex, Vesu, Surat, Gujarat 395007',
+    
+    // Project Classification (for Projects component)
+    category: 'commercial',
+    projectStatus: ['All', 'Exclusive'],
     
     // Property Information Content
     propertyInfo: {
@@ -161,6 +178,10 @@ Premium apartments with world-class amenities.`,
     phone: '91 98240-99444',
     location: 'Massimo Towers, Althan, Surat, Gujarat 395017',
     
+    // Project Classification (for Projects component)
+    category: 'commercial',
+    projectStatus: ['All', 'Upcoming'],
+    
     // Property Information Content
     propertyInfo: {
       facilities: [
@@ -204,6 +225,10 @@ Modern architecture with premium finishes.`,
     phone: '91 98240-99444',
     location: 'Torrance Heights, Piplod, Surat, Gujarat 395007',
     
+    // Project Classification (for Projects component)
+    category: 'residential',
+    projectStatus: ['All', 'Upcoming'],
+    
     // Property Information Content
     propertyInfo: {
       facilities: [
@@ -232,6 +257,53 @@ Modern architecture with premium finishes.`,
       return getPropertyImages(this.slug)
     },
     featuredImageIndex: 0 // Which image to show first (0 = main.jpg)
+  },
+
+  {
+    // Basic Property Information
+    id: 6,
+    name: 'FLAMINGO',
+    slug: 'flamingo', // Used in URL: /property/flamingo
+    description: `Flamingo Heights - Premium residential living
+Elegant design with modern amenities.`,
+    
+    // Property Details
+    status: 'Completed',
+    phone: '91 98240-99444',
+    location: 'Flamingo Heights, Vesu, Surat, Gujarat 395007',
+    
+    // Project Classification (for Projects component)
+    category: 'residential',
+    projectStatus: ['All', 'Exclusive'],
+    
+    // Property Information Content
+    propertyInfo: {
+      facilities: [
+        'Premium Design',
+        'Modern Amenities',
+        'Prime Location',
+        '2-3 Bedrooms'
+      ],
+      video: {
+        title: 'Flamingo Property Tour',
+        url: '/src/assets/videos/flamingo-tour.mp4' // Path to video file
+      },
+      plans: [
+        '2 BHK Premium',
+        '3 BHK Deluxe',
+        'Penthouse Options'
+      ],
+      brochure: {
+        title: 'Download Flamingo Brochure',
+        url: '/src/assets/brochures/flamingo-brochure.pdf' // Path to PDF file
+      }
+    },
+    
+    // Images are automatically loaded from folder
+    get images() {
+      return getPropertyImages(this.slug)
+    },
+    featuredImageIndex: 0 // Which image to show first (0 = main.jpg)
   }
 ]
 
@@ -252,4 +324,44 @@ export const getAllPropertySlugs = () => {
 // Get property by ID
 export const getPropertyById = (id) => {
   return PROPERTIES.find(property => property.id === id)
+}
+
+// =============================================================================
+// PROJECT ADAPTER FUNCTIONS (For backward compatibility with Projects component)
+// =============================================================================
+
+// Filter options for projects (same as before)
+export const FILTER_OPTIONS = ['All', 'New', 'Exclusive', 'Upcoming']
+
+// Convert property to project format for Projects component
+const propertyToProject = (property) => ({
+  id: property.slug, // Projects use slug as id
+  name: property.name === 'BELLACASSA' ? 'Bella casa' : property.name, // Match original project name format
+  image: property.images[0], // Use first image as project image
+  category: property.category,
+  status: property.projectStatus
+})
+
+// Get projects data in the original format (backward compatibility)
+export const PROJECTS_DATA = {
+  commercial: PROPERTIES
+    .filter(property => property.category === 'commercial')
+    .map(propertyToProject),
+  residential: PROPERTIES
+    .filter(property => property.category === 'residential')
+    .map(propertyToProject)
+}
+
+// Get filtered projects (same API as before)
+export const getFilteredProjects = (category, filter) => {
+  const projects = PROJECTS_DATA[category] || []
+  if (filter === 'All') {
+    return projects
+  }
+  return projects.filter(project => project.status.includes(filter))
+}
+
+// Navigate from project to property page
+export const getPropertyUrlFromProject = (project) => {
+  return `/property/${project.id}` // project.id is the property slug
 } 

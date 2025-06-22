@@ -1,8 +1,8 @@
 // Import images for testimonials
-import valentinoImg from '../assets/images/projects/valentino.png'
-import torranceImg from '../assets/images/projects/torrance.png'
-import majorisImg from '../assets/images/projects/majoris.jpg'
-import bellaCasaImg from '../assets/images/projects/bella-casa.png'
+import valentinoImg from '../assets/images/testimonials/valentino.png'
+import torranceImg from '../assets/images/testimonials/torrance.png'
+import majorisImg from '../assets/images/testimonials/majoris.jpg'
+import bellaCasaImg from '../assets/images/testimonials/bella-casa.png'
 
 
 // Simply modify the text content, names, or add new testimonials below

@@ -1,8 +1,11 @@
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import ProjectCard from './ProjectCard'
-import { PROJECTS_DATA, FILTER_OPTIONS, getFilteredProjects } from '../../constants/projects-data'
+import { PROJECTS_DATA, FILTER_OPTIONS, getFilteredProjects, getPropertyUrlFromProject } from '../../data/properties'
 
 const Projects = () => {
+  const navigate = useNavigate()
+  
   // State for filter management - independent for each category
   const [commercialFilter, setCommercialFilter] = useState('All')
   const [residentialFilter, setResidentialFilter] = useState('All')
@@ -20,10 +23,10 @@ const Projects = () => {
     setResidentialFilter(filter)
   }
 
-  // Handle project card click
+  // Handle project card click - Navigate to property page
   const handleProjectClick = (project) => {
-    console.log('Project clicked:', project)
-    // TODO: Navigate to project details page
+    const propertyUrl = getPropertyUrlFromProject(project)
+    navigate(propertyUrl)
   }
 
 

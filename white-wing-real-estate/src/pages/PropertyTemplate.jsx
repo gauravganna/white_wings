@@ -4,6 +4,7 @@ import Footer from '../components/Footer/Footer'
 import PropertyHero from '../components/PropertyHero/PropertyHero'
 import PropertyInfo from '../components/PropertyInfo/PropertyInfo'
 import { getPropertyBySlug } from '../data/properties'
+import Projects from '../components/Projects/Projects'
 
 function PropertyTemplate() {
   // Get property slug from URL parameters
@@ -43,6 +44,7 @@ function PropertyTemplate() {
       {/* Property Information Section */}
       <PropertyInfo property={property} />
       
+      <Projects />
       {/* Main Property Content Area - To be filled later */}
       <main className="flex-grow">
         {/* Additional property content sections will go here */}

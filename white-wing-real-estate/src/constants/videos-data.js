@@ -1,9 +1,9 @@
 // Import project images for use as video thumbnails
-import torranceImg from '../assets/images/projects/torrance.png'
-import majorisImg from '../assets/images/projects/majoris.jpg'
-import valentinoImg from '../assets/images/projects/valentino.png'
-import bellaCasaImg from '../assets/images/projects/bella-casa.png'
-import flamingoImg from '../assets/images/projects/flamingo.png'
+import torranceImg from '../assets/images/properties/torrance/main.png'
+import majorisImg from '../assets/images/properties/majoris/main.jpg'
+import valentinoImg from '../assets/images/properties/valentino/main.png'
+import bellaCasaImg from '../assets/images/properties/bella-casa/main.png'
+import flamingoImg from '../assets/images/properties/flamingo/main.png'
 
 // Video thumbnail images - temporarily using project images for demo
 // Replace with actual video thumbnails when available
