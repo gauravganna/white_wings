@@ -1,14 +1,21 @@
 import { useParams } from 'react-router-dom'
+import { useEffect } from 'react'
 import Header from '../components/Header/Header'
 import Footer from '../components/Footer/Footer'
 import PropertyHero from '../components/PropertyHero/PropertyHero'
 import PropertyInfo from '../components/PropertyInfo/PropertyInfo'
 import { getPropertyBySlug } from '../data/properties'
 import Projects from '../components/Projects/Projects'
+import Contact from '../components/Contact/Contact'
 
 function PropertyTemplate() {
   // Get property slug from URL parameters
   const { slug } = useParams()
+  
+  // Scroll to top when property slug changes
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  }, [slug])
   
   // Find the property data using the slug
   const property = getPropertyBySlug(slug)
@@ -49,6 +56,9 @@ function PropertyTemplate() {
         showOnlyCategory={property.category}
         sectionTitle={`Other ${property.category === 'commercial' ? 'Commercial' : 'Residential'} Projects`}
       />
+
+      <Contact />
+      
       {/* Main Property Content Area - To be filled later */}
       <main className="flex-grow">
         {/* Additional property content sections will go here */}
