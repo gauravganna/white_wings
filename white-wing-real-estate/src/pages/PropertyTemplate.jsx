@@ -44,7 +44,11 @@ function PropertyTemplate() {
       {/* Property Information Section */}
       <PropertyInfo property={property} />
       
-      <Projects />
+      <Projects 
+        currentProperty={property}
+        showOnlyCategory={property.category}
+        sectionTitle={`Other ${property.category === 'commercial' ? 'Commercial' : 'Residential'} Projects`}
+      />
       {/* Main Property Content Area - To be filled later */}
       <main className="flex-grow">
         {/* Additional property content sections will go here */}

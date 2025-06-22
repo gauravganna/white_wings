@@ -3,16 +3,34 @@ import { useNavigate } from 'react-router-dom'
 import ProjectCard from './ProjectCard'
 import { PROJECTS_DATA, FILTER_OPTIONS, getFilteredProjects, getPropertyUrlFromProject } from '../../data/properties'
 
-const Projects = () => {
+const Projects = ({ 
+  currentProperty = null, // Current property to exclude from results
+  showOnlyCategory = null, // 'commercial' or 'residential' - if null, show both
+  sectionTitle = "Projects" // Custom section title
+}) => {
   const navigate = useNavigate()
   
   // State for filter management - independent for each category
   const [commercialFilter, setCommercialFilter] = useState('All')
   const [residentialFilter, setResidentialFilter] = useState('All')
 
+  // Helper function to exclude current property from projects
+  const excludeCurrentProperty = (projects) => {
+    if (!currentProperty) return projects
+    return projects.filter(project => project.id !== currentProperty.slug)
+  }
+
   // Get filtered projects for each category
-  const filteredCommercialProjects = getFilteredProjects('commercial', commercialFilter)
-  const filteredResidentialProjects = getFilteredProjects('residential', residentialFilter)
+  let filteredCommercialProjects = getFilteredProjects('commercial', commercialFilter)
+  let filteredResidentialProjects = getFilteredProjects('residential', residentialFilter)
+  
+  // Exclude current property if provided
+  filteredCommercialProjects = excludeCurrentProperty(filteredCommercialProjects)
+  filteredResidentialProjects = excludeCurrentProperty(filteredResidentialProjects)
+  
+  // Limit to 3 projects per category
+  filteredCommercialProjects = filteredCommercialProjects.slice(0, 3)
+  filteredResidentialProjects = filteredResidentialProjects.slice(0, 3)
 
   // Handle filter changes
   const handleCommercialFilterChange = (filter) => {
@@ -42,13 +60,14 @@ const Projects = () => {
       {/* Section Header */}
       <div className="flex flex-row items-center gap-1 mb-2 mt-6 md:mb-11">
         <h2 className="text-[#091E42] opacity-50 text-[18px] md:text-[20.35px] font-normal leading-[1.27] tracking-[-0.026em] px-4 md:px-0">
-          Projects
+          {sectionTitle}
         </h2>
       </div>
 
       {/* Projects Container */}
       <div className="flex flex-col justify-center gap-2 md:gap-2 max-w-[1440px] mx-auto">
-        {/* Commercial Projects Container */}
+        {/* Commercial Projects Container - Show if no category filter or if showing commercial */}
+        {(!showOnlyCategory || showOnlyCategory === 'commercial') && (
         <div className="bg-[#DFE2E6] rounded-lg shadow-[0px_1px_2px_0px_rgba(0,0,0,0.06),0px_1px_3px_0px_rgba(0,0,0,0.1)] px-2 md:px-6 py-6 md:py-11 flex flex-col items-center gap-3.5">
           {/* Commercial Header */}
           <div className="w-full flex items-center justify-between px-1 md:px-2.5">
@@ -83,7 +102,7 @@ const Projects = () => {
 
           {/* Commercial Projects Grid */}
           <div className="w-full pt-2">
-            {/* Mobile: Horizontal Scrolling */}
+            {/* Mobile: Horizontal Scrolling - Max 3 projects */}
             <div className="md:hidden flex overflow-x-auto gap-4 px-2 pb-2 scrollbar-hide">
               {filteredCommercialProjects.map((project) => (
                 <div key={project.id} className="flex-shrink-0">
@@ -94,7 +113,7 @@ const Projects = () => {
                 </div>
               ))}
             </div>
-            {/* Desktop: Grid Layout */}
+            {/* Desktop: Grid Layout - Max 3 projects */}
             <div className="hidden md:flex items-center gap-6">
               {filteredCommercialProjects.map((project) => (
                 <ProjectCard
@@ -106,8 +125,10 @@ const Projects = () => {
             </div>
           </div>
         </div>
+        )}
 
-        {/* Residential Projects Container */}
+        {/* Residential Projects Container - Show if no category filter or if showing residential */}
+        {(!showOnlyCategory || showOnlyCategory === 'residential') && (
         <div className="bg-[#DFE2E6] rounded-lg shadow-[0px_1px_2px_0px_rgba(0,0,0,0.06),0px_1px_3px_0px_rgba(0,0,0,0.1)] px-2 md:px-6 py-6 md:py-11 flex flex-col items-end gap-3.5">
           {/* Residential Header */}
           <div className="w-full flex items-center justify-between px-1 md:px-2.5">
@@ -142,7 +163,7 @@ const Projects = () => {
 
           {/* Residential Projects Grid */}
           <div className="w-full pt-2">
-            {/* Mobile: Horizontal Scrolling */}
+            {/* Mobile: Horizontal Scrolling - Max 3 projects */}
             <div className="md:hidden flex overflow-x-auto gap-4 px-2 pb-2 scrollbar-hide">
               {filteredResidentialProjects.map((project) => (
                 <div key={project.id} className="flex-shrink-0">
@@ -153,7 +174,7 @@ const Projects = () => {
                 </div>
               ))}
             </div>
-            {/* Desktop: Grid Layout */}
+            {/* Desktop: Grid Layout - Max 3 projects */}
             <div className="hidden md:flex items-center gap-6">
               {filteredResidentialProjects.map((project) => (
                 <ProjectCard
@@ -165,6 +186,7 @@ const Projects = () => {
             </div>
           </div>
         </div>
+        )}
       </div>
     </section>
   )
