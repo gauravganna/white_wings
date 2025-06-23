@@ -1,15 +1,22 @@
 import { motion } from 'framer-motion' // eslint-disable-line
 import { useState, useEffect, useRef } from 'react'
 import heroVideo from '../../assets/videos/about-us/video.mp4'
+import AboutUsCarousel from './AboutUsCarousel'
 
 const AboutUsHero = () => {
   const [animationStarted, setAnimationStarted] = useState(false)
+  const [carouselStarted, setCarouselStarted] = useState(false)
   const videoRef = useRef(null)
 
   useEffect(() => {
     // Start animation after component mounts
     const timer = setTimeout(() => {
       setAnimationStarted(true)
+      
+      // Start carousel immediately after WHITE animation completes (2 seconds)
+      setTimeout(() => {
+        setCarouselStarted(true)
+      }, 2000) // WHITE animation duration
     }, 500) // Small delay for smooth start
 
     return () => clearTimeout(timer)
@@ -35,7 +42,7 @@ const AboutUsHero = () => {
     },
     animate: {
       width: "8.33vw", // Width of letter "I" (120px/1440px = 8.33% of viewport width)
-      height: "45vh", // Height of letter "I" (relative to viewport height)
+      height: "35vh", // Height of letter "I" (relative to viewport height)
       borderRadius: "0.56vw", // Responsive border radius (8px/1440px)
       x: "5vw", // Shift 5% to the right (5% of viewport width)
       transformOrigin: "center center", // Keep center as transform origin
@@ -159,6 +166,9 @@ const AboutUsHero = () => {
           TE
         </h1>
       </motion.div>
+
+      {/* Carousel - appears after WHITE animation */}
+      <AboutUsCarousel startAnimation={carouselStarted} />
 
     </section>
   )
